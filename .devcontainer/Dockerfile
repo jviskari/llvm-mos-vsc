@@ -45,6 +45,9 @@ ARG gid=1000
 RUN groupadd -g ${gid} ${group}
 RUN useradd -m -u ${uid} -g ${gid} -s /bin/bash ${user}
 
+RUN apt-get install -y libreadline-dev gawk cpmtools libfmt-dev fp-compiler
+RUN apt-get install -y zip
+
 # Switch to non-root user
 
 ENV PATH=$PATH:$MOS_SDK_PATH/bin
